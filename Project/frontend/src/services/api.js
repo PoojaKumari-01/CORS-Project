@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:9000/api";
+// const API_BASE_URL = "http://localhost:9000/api";
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: process.env.cors-project-production.up.railway.app || 'http://localhost:9000/api',
   withCredentials: true, // Include cookies for JWT
   headers: {
     "Content-Type": "application/json",
