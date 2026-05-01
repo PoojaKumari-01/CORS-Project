@@ -7,13 +7,14 @@ import { authRouter } from "./routes/auth_route.js";
 import { roleRouter } from "./routes/role_route.js";
 import { permissionRouter } from "./routes/permission_route.js";
 import { jwtMiddleware, roleMiddleware } from "./middleware/auth_middleware.js";
+import { FRONTEND_URL } from "./config/env_config.js";
 
 const app = express();
 
 // CORS configuration
 app.use(
   cors({
-    origin: "https://cors-project.vercel.app/", // Frontend URL
+    origin: FRONTEND_URL,
     credentials: true,
   })
 );
