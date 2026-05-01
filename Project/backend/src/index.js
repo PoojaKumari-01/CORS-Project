@@ -16,9 +16,10 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: "https://cors-project.vercel.app/",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 
