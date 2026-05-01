@@ -9,8 +9,6 @@ import { permissionRouter } from "./routes/permission_route.js";
 import { jwtMiddleware, roleMiddleware } from "./middleware/auth_middleware.js";
 import { FRONTEND_URL, PORT } from "./config/env_config.js";
 
-const express = require('express');
-const cors = require('cors');
 const app = express();
 
 // CORS configuration
