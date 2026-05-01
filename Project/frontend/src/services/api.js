@@ -1,10 +1,8 @@
 import axios from "axios";
 
-// const API_BASE_URL = "http://localhost:9000/api";
-
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:9000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:9000/api',
   withCredentials: true, // Include cookies for JWT
   headers: {
     "Content-Type": "application/json",
