@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: process.env.cors-project-production.up.railway.app || 'http://localhost:9000/api',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:9000/api',
   withCredentials: true, // Include cookies for JWT
   headers: {
     "Content-Type": "application/json",
