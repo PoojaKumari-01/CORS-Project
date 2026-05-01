@@ -7,7 +7,7 @@ import { authRouter } from "./routes/auth_route.js";
 import { roleRouter } from "./routes/role_route.js";
 import { permissionRouter } from "./routes/permission_route.js";
 import { jwtMiddleware, roleMiddleware } from "./middleware/auth_middleware.js";
-import { FRONTEND_URL } from "./config/env_config.js";
+import { FRONTEND_URL, PORT } from "./config/env_config.js";
 
 const app = express();
 
@@ -28,8 +28,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/role", jwtMiddleware, roleMiddleware, roleRouter);
 app.use("/api/permission", jwtMiddleware, roleMiddleware, permissionRouter);
 
-app.listen(9000, async () => {
-  console.log("Server is running on port 9000");
+app.listen(PORT, async () => {
+  console.log(`Server is running on port ${PORT}`);
   await connect();
   console.log("mongodb connected");
 });
